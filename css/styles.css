@@ -1,0 +1,541 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    color: #64706E;
+}
+
+strong {
+    color: #204741;
+}
+
+/* #region Sidebar */
+aside.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 58px;
+    background: #3ECFAF;
+    padding: 24px 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* #region Sidebar Menu */
+aside.sidebar > section.menu {
+    flex: 1;
+    transition: opacity .3s ease-out;
+}
+
+aside.sidebar > section.menu > div {
+    flex: 1;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+aside.sidebar > section.menu:hover {
+    opacity: .7;
+}
+
+aside.sidebar > section.menu > div  > div {
+    background: #012D26;
+    height: 2px;
+    margin-top: 4px;
+}
+
+aside.sidebar > section.menu > div > div:nth-child(2) {
+    width: 80%;
+}
+aside.sidebar > section.menu > div > div:nth-child(3) {
+    width: 60%;
+}
+aside.sidebar > section.menu > div > div:nth-child(4) {
+    width: 40%;
+}
+aside.sidebar > section.menu > div > div:nth-child(5) {
+    width: 20%;
+}
+/* #endregion Sidebar Menu */
+
+/* #endregion Sidebar */
+
+/* #region main section */
+main.container {
+    width: 100vw;
+    padding-left: 58px;
+    display: flex;
+    flex-direction: column;;
+}
+
+/* #region header section */
+header {
+    display: flex;
+    width: 100%;
+    min-height: 90px;
+    border-bottom: 1px solid #E5F0EE;
+}
+
+@media (max-width: 854px) {
+    header {
+        min-height: 158px;
+    }
+}
+
+header > div:first-child {
+    min-height: 90px;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* #region header company info */
+header > * > section.company-logo {
+    border: 1px solid #E6F0EF;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 32px;
+}
+
+header > * > section.company-logo > img {
+    max-height: 60px;
+    width: auto;
+}
+
+header > * > section.company-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+header > * > section.company-info > h1, header > * > section.company-info > h2 {
+    margin: 0;
+    padding: 5px;
+}
+
+header > * > section.company-info > h1 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #08332C;
+}
+
+header > * > section.company-info > h1 > span {
+    color: #616E6C;
+}
+
+header > * > section.company-info > h2{
+    font-size: 11px;
+    font-weight: normal;
+    color: #616E6C;
+}
+/* #endregion header company info */
+
+
+/* #region tab section */
+header > * > section.tab-section {
+    height: 90px;
+    min-width: 300px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 854px) {
+    header > * > section.tab-section {
+        width: 100%;
+    }
+}
+
+header > * > section.tab-section > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+header > * > section.tab-section > ul > li {
+    height: 40px;
+    margin: 0 32px;
+    color: #6D7877;
+}
+
+header > * > section.tab-section > ul > li > a {
+    color: #6D7877;
+    text-decoration: none;
+}
+
+header > * > section.tab-section > ul > li:last-child {
+    margin: 0;
+}
+
+header > * > section.tab-section > ul > li.active {
+    border-bottom: 2px solid #4553FF;
+}
+
+header > * > section.tab-section > ul > li.active > a {
+    color: #4553FF;
+}
+/* #endregion tab section */
+
+/* #endregion header section */
+
+/* #region main content */
+section.main-content {
+    height: 100%;
+    background: #F8F8F8;
+    display: flex;
+    justify-content: center;
+}
+
+section.main-content > section:first-child {
+    margin: 32px 0;
+}
+/* #endregion main content */
+
+/* #region card tags */
+.tag-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.tag-container > div {
+    flex: 1;
+    padding: 5px 24px;
+}
+/* #endregion card tags */
+
+
+/* #region data-scroll */
+.data-scroll {
+    border: 1px solid #F8F8F8;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #F8F8F8;
+    display: grid;
+    grid-template-columns: 80px auto;
+    margin-bottom: 8px;
+    transition: border .3s ease-out;
+}
+
+.data-scroll:hover {
+    border: 1px solid #ccc;
+}
+
+.data-scroll-arrow {
+    display: flex;
+    background: #fff;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #F0F0F0;
+    cursor: pointer;
+}
+
+.data-scroll-arrow:hover {
+    border: 1px solid #ccc;
+}
+
+.data-scroll-arrow > span {
+    padding-top: 10px;
+}
+
+.data-scroll-arrow.left, .data-scroll-arrow.right {
+    position: absolute;
+    top: 50px;
+}
+
+.data-scroll-arrow.left {
+    left: -15px;
+}
+
+.data-scroll-arrow.right {
+    right: 5px;
+}
+
+.data-scroll-title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+}
+
+.data-scroll-title > strong {
+    font-size: 18px;;
+}
+
+.data-detail {
+    position: relative;
+    min-width: 0;
+}
+
+.data-cards {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 135px;
+    min-width: 0;
+    white-space:nowrap;
+}
+
+.data-cards > .data-card {
+    display:inline-block;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 130px;
+    width: 100px;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: border .3s ease-out;
+}
+
+.data-cards > .data-card:hover {
+    border: 1px solid #ccc;
+}
+
+.data-card-title {
+    font-size: 11px;
+    text-align: center;
+    padding: 4px;
+}
+
+.data-card-title.green {
+    background: #D3FFEF;
+}
+
+.data-card-title.yellow {
+    background: #FFEED3;
+}
+
+.data-card-title.red {
+    background: #FFD3D3;
+}
+
+.data-card-body {
+    padding: 8px 16px;
+}
+
+.data-card-body > div {
+    margin: 8px 0;
+}
+.data-card-body > div:nth-child(1) {
+    color: #63706D;
+}
+.data-card-body > div:nth-child(2) {
+    color: #848E8D;
+    font-size: 14px;
+}
+
+.data-card-body > div:nth-child(3) {
+    background: #F2F2F2;
+    font-size: 10px;
+    margin-top: 15px;
+    padding: 2px 2px;
+    text-align: center;
+    border-radius: 5px;
+}
+/* #endregion data-scroll */
+
+
+/* #endregion main section */
+
+
+
+
+
+/* #region reusable elements */
+
+/* #region Avatar */
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    background: #EAFFF5;
+    font-size: 12px;
+    border-radius: 50%;
+    transition: background .3s ease-out;
+    cursor: pointer;
+}
+
+.avatar:hover {
+    background: #FCFCFC;
+}
+/* #endregion Avatar */
+
+/* #region content wrapper */
+.content {
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+}
+/* #endregion content wrapper */
+
+
+/* #region back button */
+.back-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    -webkit-box-shadow: 1px 1px 5px 2px #ccc;
+    -moz-box-shadow:    1px 1px 5px 2px #ccc;
+    box-shadow:         1px 1px 5px 2px #ccc;
+}
+
+.back-button:hover {
+    -webkit-box-shadow: 1px 1px 5px 2px #c3c3c3;
+    -moz-box-shadow:    1px 1px 5px 2px #c3c3c3;
+    box-shadow:         1px 1px 5px 2px #c3c3c3;
+}
+/* #endregion back button */
+
+/* #region card */
+section.card {
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+section.card > .card-header {
+    padding: 42px;
+    border-bottom: 1px solid #E5F0EE;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section.card > .card-header > div {
+    flex: 1;
+    text-align: center;
+    min-width: 150px;
+    align-items: center;
+    padding: 4px 0;
+}
+
+section.card > .card-body {
+    padding: 42px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    min-width: 0;
+}
+/* #endregion card */
+
+/* #region dropdown */
+.dropdown-button {
+    background-color: #fff;
+    color: #4553FF;
+    padding: 8px 18px;
+    font-size: 14px;
+    border: 1px solid #4553FF;
+    border-radius: 24px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 8px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,.1);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #4553FF;
+    font-size: 14px;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+/* #endregion dropdown */
+
+/* #region icon chevron-down */
+.chevron::before {
+    border-style: solid;
+    border-width: 0.15em 0.15em 0 0;
+    content: '';
+    display: inline-block;
+    height: 0.35em;
+    left: 0.15em;
+    position: relative;
+    vertical-align: top;
+    width: 0.35em;
+    transform: rotate(-45deg);
+}
+
+.chevron.right:before {
+	left: 0;
+	transform: rotate(45deg);
+}
+
+.chevron.bottom:before {
+	top: 2px;
+	transform: rotate(135deg);
+}
+
+.chevron.left:before {
+	left: 0.25em;
+	transform: rotate(-135deg);
+}
+/* #endregion icon chevron-down */
+
+
+/* #region tag */
+.tag {
+    width: 100%;
+    font-size: 14px;
+    border: 1px solid #E5F0EE;
+    border-radius: 24px;
+    cursor: pointer;
+    padding: 8px 16px;
+    text-align: center;
+}
+/* #endregion tag */
+
+
+/* #endregion reusable elements */
+
