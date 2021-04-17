@@ -229,7 +229,12 @@ section.main-content > section:first-child {
     border: 1px solid #ccc;
 }
 
+.data-scroll:hover > div > .data-scroll-arrow {
+    opacity: 1;
+}
+
 .data-scroll-arrow {
+    opacity: 0;
     display: flex;
     background: #fff;
     width: 32px;
@@ -239,6 +244,7 @@ section.main-content > section:first-child {
     border-radius: 50%;
     border: 1px solid #F0F0F0;
     cursor: pointer;
+    transition: opacity .3s ease-out;
 }
 
 .data-scroll-arrow:hover {
